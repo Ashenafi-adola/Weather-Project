@@ -75,6 +75,8 @@
             border-radius: 15px;
             border: solid black 1px;
             background-color: #262f3e;
+            overflow-x: scroll;
+            overflow-y: unset;
         }
         .more{
             height: 30%;
@@ -98,6 +100,19 @@
             border: solid black 1px;
             background-color: #262f3e;
         }
+        .hourly{
+            height: 140px;
+            width: 75px;
+            background: #be0000;
+            display: inline-block;
+            margin: 5px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .hourly-container{
+            width: 145%;
+            vertical-align: bottom;
+        }
     </style>
 </head>
 <body>
@@ -111,21 +126,30 @@
     <div class="main">
         <div class="first">
             <div class="current">
-                <div style="display: inline-block; width: 50%; height: 100%;">
+                <div style="padding-left: 20px; display: inline-block; width: 50%; height: 100%;">
                     <div>
-                        <h2 style="color: white;">{{city_name}}</h2>
+                        <h2 style="color: white; font-size: 40px;">{{city_name}}</h2>
                         <small style="color: white;">{{current_condition}}</small>
                     </div>
                     <div style="margin-top: 80px;">
-                        <h1 style="color: white;">{{current_temp}}</h1>
+                        <h1 style="color: white;">{{current_temp}}°C</h1>
                     </div>
                 </div>
-                <div style="display: inline;">
-                    <img src="{% static 'core/03d.png' %}" alt="img" style="align-self: center;">
+                <div style="display: inline; vertical-align: top;">
+                    <img src="{% static 'core/03n.png' %}" alt="img" style="align-self: center; height: 120px; margin: 50px;">
                 </div>
             </div>
             <div class="today">
-
+                <h3 style="color: white;">Hourly Forecast</h3>
+                <div class="hourly-container">
+                    {% for hour in Hourly %}
+                        <div class="hourly">
+                            <p style="color: white;">{{hour.time}}</p>
+                            <img src="{% static 'core/currentWeather' %}" alt="">
+                            <p style="color: white;">{{hour.temprature}}</p>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
             <div class="more">
 

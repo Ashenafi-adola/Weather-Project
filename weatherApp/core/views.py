@@ -22,13 +22,31 @@ def home(request):
     current_weather = currentWeather['weather'][0]['icon']
 
     class Hourly:
-        def __init__(self,):
-            pass
+        def __init__(self,index):
+            self.index = index
+        def temprature(self):
+            return weather['list'][self.index]['main']['temp']
+        def icon(self):
+            return f"{weather['list'][self.index]['weather'][0]['icon']}.png"
+        def time(self):
+            return (weather['list'][self.index]['dt_txt'])[-8:-3]
 
+    Hours = [
+        Hourly(0),
+        Hourly(1),
+        Hourly(2),
+        Hourly(3),
+        Hourly(4),
+        Hourly(5),
+        Hourly(6),
+        Hourly(7),
+        Hourly(8),
+    ]
     context = {
         "current_temp": current_temp,
         "city_name": city_name,
         "current_condition": current_codnditon,
-        "current_weather": currentWeather,
+        "currentWeather": f"{currentWeather['weather'][0]['icon']}.png",
+        "Hourly": Hours
     }
     return render(request,'core/home.html',context)
