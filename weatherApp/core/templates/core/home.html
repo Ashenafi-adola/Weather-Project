@@ -1,3 +1,4 @@
+{% load static %}                                                                                                {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,7 +111,18 @@
     <div class="main">
         <div class="first">
             <div class="current">
-
+                <div style="display: inline-block; width: 50%; height: 100%;">
+                    <div>
+                        <h2 style="color: white;">{{city_name}}</h2>
+                        <small style="color: white;">{{current_condition}}</small>
+                    </div>
+                    <div style="margin-top: 80px;">
+                        <h1 style="color: white;">{{current_temp}}</h1>
+                    </div>
+                </div>
+                <div style="display: inline;">
+                    <img src="{% static 'core/03d.png' %}" alt="img" style="align-self: center;">
+                </div>
             </div>
             <div class="today">
 
