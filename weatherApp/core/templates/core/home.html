@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <style>
+        html, body{
+            padding: 0px;
+            margin: 0px;
+        }
+        .main-bar{
+            background-color: #00ff00;
+            top: 0px;
+            margin: 0px;
+            display: flex;
+        }
+        .main-bar h1{
+            display: inline-block;
+            margin-left: 20px;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            height: 30px;
+            border-radius: 20px;
+            margin: auto;
+            margin-right: 50px;
+        }
+        input{
+            width: 250px;
+            padding-left: 20px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            border: none;
+        }
+        button{
+            width: 80px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            border: none;
+        }
+        .main{
+            width: 100%;
+            height: 760px;
+            border: solid black 1px;
+            display: flex;
+            background-color: #131a24;
+        }
+        .first{
+            width: 70%;
+            height: 760px;
+            display: inline-block;
+            justify-content: center;
+        }
+        .current{
+            height: 30%;
+            width: 94%;
+            margin: 15px;
+            border-radius: 15px;
+            align-self: center;
+        }
+        .today{
+            height: 30%;
+            width: 94%;
+            margin: 15px;
+            border-radius: 15px;
+            border: solid black 1px;
+            background-color: #262f3e;
+        }
+        .more{
+            height: 30%;
+            width: 94%;
+            margin: 15px;
+            border-radius: 15px;
+            border: solid black 1px;
+            background-color: #262f3e;
+        }
+        .second{
+            width: 30%;
+            height: 760px;
+            display: flex;
+            
+        }
+        .forecast{
+            height: 95%;
+            width: 88%;
+            border-radius: 15px;
+            margin: 15px;
+            border: solid black 1px;
+            background-color: #262f3e;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-bar">
+        <h1>Weather</h1>
+        <form action="" method="get">
+            <input type="search" name="city" placeholder="Search City...">
+            <button type="submit" >Search</button>
+        </form>
+    </div>
+    <div class="main">
+        <div class="first">
+            <div class="current">
+
+            </div>
+            <div class="today">
+
+            </div>
+            <div class="more">
+
+            </div>
+        </div>
+        <div class="second">
+            <div class="forecast">
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
