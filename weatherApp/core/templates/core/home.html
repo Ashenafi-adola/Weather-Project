@@ -136,7 +136,7 @@
                     </div>
                 </div>
                 <div style="display: inline; vertical-align: top;">
-                    <img src="{% static 'core/03n.png' %}" alt="img" style="align-self: center; height: 120px; margin: 50px;">
+                    <img src="{% static currentWeather %}" alt="img" style="align-self: center; height: 120px; margin: 50px;">
                 </div>
             </div>
             <div class="today">
@@ -145,7 +145,7 @@
                     {% for hour in Hourly %}
                         <div class="hourly">
                             <p style="color: white;">{{hour.time}}</p>
-                            <img src="{% static 'core/currentWeather' %}" alt="">
+                            <img src="{% static hour %}" alt="">
                             <p style="color: white;">{{hour.temprature}}</p>
                         </div>
                     {% endfor %}

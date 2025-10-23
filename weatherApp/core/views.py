@@ -19,14 +19,13 @@ def home(request):
     current_temp = currentWeather['main']['temp']
     city_name = currentWeather['name']
     current_codnditon = currentWeather['weather'][0]['description']
-    current_weather = currentWeather['weather'][0]['icon']
 
     class Hourly:
         def __init__(self,index):
             self.index = index
         def temprature(self):
             return weather['list'][self.index]['main']['temp']
-        def icon(self):
+        def __str__(self):
             return f"{weather['list'][self.index]['weather'][0]['icon']}.png"
         def time(self):
             return (weather['list'][self.index]['dt_txt'])[-8:-3]
